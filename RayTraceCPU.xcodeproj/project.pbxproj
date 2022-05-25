@@ -42,7 +42,7 @@
 		DAA2B29627EE0B1000E3BC56 /* vec2.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = vec2.hpp; sourceTree = "<group>"; };
 		DAA2B29827EF552700E3BC56 /* rayhit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = rayhit.cpp; sourceTree = "<group>"; };
 		DAA2B29927EF552700E3BC56 /* rayhit.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = rayhit.hpp; sourceTree = "<group>"; };
-		DAC1EF5927E9A10200BF5CB7 /* RayTraceCPU v0.0 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "RayTraceCPU v0.0"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DAC1EF5927E9A10200BF5CB7 /* RayTraceCPU */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RayTraceCPU; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAC1EF5C27E9A10200BF5CB7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		DAC1EF6F27E9A7EE00BF5CB7 /* vec3.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vec3.hpp; sourceTree = "<group>"; };
 		DAC1EF7127E9AE3100BF5CB7 /* vec3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = vec3.cpp; sourceTree = "<group>"; };
@@ -93,7 +93,7 @@
 		DAC1EF5A27E9A10200BF5CB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DAC1EF5927E9A10200BF5CB7 /* RayTraceCPU v0.0 */,
+				DAC1EF5927E9A10200BF5CB7 /* RayTraceCPU */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,9 +143,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DAC1EF5827E9A10200BF5CB7 /* RayTraceCPU v0.0 */ = {
+		DAC1EF5827E9A10200BF5CB7 /* RayTraceCPU */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DAC1EF6027E9A10200BF5CB7 /* Build configuration list for PBXNativeTarget "RayTraceCPU v0.0" */;
+			buildConfigurationList = DAC1EF6027E9A10200BF5CB7 /* Build configuration list for PBXNativeTarget "RayTraceCPU" */;
 			buildPhases = (
 				DAC1EF5527E9A10200BF5CB7 /* Sources */,
 				DAC1EF5627E9A10200BF5CB7 /* Frameworks */,
@@ -155,9 +155,9 @@
 			);
 			dependencies = (
 			);
-			name = "RayTraceCPU v0.0";
+			name = RayTraceCPU;
 			productName = RayTraceCPU;
-			productReference = DAC1EF5927E9A10200BF5CB7 /* RayTraceCPU v0.0 */;
+			productReference = DAC1EF5927E9A10200BF5CB7 /* RayTraceCPU */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -174,7 +174,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DAC1EF5427E9A10200BF5CB7 /* Build configuration list for PBXProject "RayTraceCPU v0.0" */;
+			buildConfigurationList = DAC1EF5427E9A10200BF5CB7 /* Build configuration list for PBXProject "RayTraceCPU" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -187,7 +187,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DAC1EF5827E9A10200BF5CB7 /* RayTraceCPU v0.0 */,
+				DAC1EF5827E9A10200BF5CB7 /* RayTraceCPU */,
 			);
 		};
 /* End PBXProject section */
@@ -346,7 +346,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DAC1EF5427E9A10200BF5CB7 /* Build configuration list for PBXProject "RayTraceCPU v0.0" */ = {
+		DAC1EF5427E9A10200BF5CB7 /* Build configuration list for PBXProject "RayTraceCPU" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAC1EF5E27E9A10200BF5CB7 /* Debug */,
@@ -355,7 +355,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DAC1EF6027E9A10200BF5CB7 /* Build configuration list for PBXNativeTarget "RayTraceCPU v0.0" */ = {
+		DAC1EF6027E9A10200BF5CB7 /* Build configuration list for PBXNativeTarget "RayTraceCPU" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DAC1EF6127E9A10200BF5CB7 /* Debug */,

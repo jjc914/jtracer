@@ -8,6 +8,6 @@
 #ifndef primatives_hpp
 #define primatives_hpp
 
-#include <stdio.h>
+#include "sphere.hpp"
 
 #endif /* primatives_hpp */

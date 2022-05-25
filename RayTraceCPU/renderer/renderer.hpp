@@ -8,5 +8,7 @@
 #ifndef renderer_h
 #define renderer_h
 
+#include "camera.hpp"
+#include "screen.hpp"
 
 #endif /* renderer_h */

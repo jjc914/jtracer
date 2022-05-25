@@ -8,6 +8,28 @@
 #ifndef camera_hpp
 #define camera_hpp
 
-#include <stdio.h>
+#include "math.hpp"
+
+using namespace math;
+
+namespace renderer {
+
+    class camera {
+    public:
+        camera(vec3<double> position, double aspectRatio, double angleOfView);
+        
+        vec3<double> getPosition() const;
+        double getFocalLength() const;
+        double getViewportWidth() const;
+        double getViewportHeight() const;
+    private:
+        const double focalLength = 1.0;
+        
+        vec3<double> position;
+        double aspectRatio;
+        double angleOfView;
+        double viewportWidth, viewportHeight;
+    };
+}
 
 #endif /* camera_hpp */

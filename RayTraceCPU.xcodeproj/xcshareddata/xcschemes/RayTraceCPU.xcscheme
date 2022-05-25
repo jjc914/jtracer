@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DAC1EF5827E9A10200BF5CB7"
                BuildableName = "RayTraceCPU"
-               BlueprintName = "RayTraceCPU v0.0"
-               ReferencedContainer = "container:RayTraceCPU v0.0.xcodeproj">
+               BlueprintName = "RayTraceCPU"
+               ReferencedContainer = "container:RayTraceCPU.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,8 +47,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DAC1EF5827E9A10200BF5CB7"
             BuildableName = "RayTraceCPU"
-            BlueprintName = "RayTraceCPU v0.0"
-            ReferencedContainer = "container:RayTraceCPU v0.0.xcodeproj">
+            BlueprintName = "RayTraceCPU"
+            ReferencedContainer = "container:RayTraceCPU.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -64,8 +64,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DAC1EF5827E9A10200BF5CB7"
             BuildableName = "RayTraceCPU"
-            BlueprintName = "RayTraceCPU v0.0"
-            ReferencedContainer = "container:RayTraceCPU v0.0.xcodeproj">
+            BlueprintName = "RayTraceCPU"
+            ReferencedContainer = "container:RayTraceCPU.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

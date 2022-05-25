@@ -8,6 +8,21 @@
 #ifndef ray_hpp
 #define ray_hpp
 
-#include <stdio.h>
+#include "vec3.hpp"
+#include "color.hpp"
+
+namespace math {
+
+    class ray {
+    public:
+        ray(vec3<double> origin, vec3<double> direction);
+        
+        vec3<double> getOrigin() const;
+        vec3<double> getDirection() const;
+    private:
+        vec3<double> origin;
+        vec3<double> direction;
+    };
+}
 
 #endif /* ray_hpp */
