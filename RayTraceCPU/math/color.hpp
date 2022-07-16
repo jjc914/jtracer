@@ -9,12 +9,16 @@
 #define color_hpp
 
 #include <ostream>
+#include <cmath>
 
 namespace math {
 
     class color {
     public:
         color(double r = 0.0, double g = 0.0, double b = 0.0, double a = 1.0);
+        
+        color& clamp();
+        color& gammaCorrect();
         
         double getR() const;
         double getG() const;
@@ -28,8 +32,12 @@ namespace math {
         
         color operator +(const color&) const;
         color operator -(const color&) const;
+        color operator *(const color&) const;
+        color operator /(const color&) const;
         color& operator +=(const color&);
         color& operator -=(const color&);
+        color& operator *=(const color&);
+        color& operator /=(const color&);
         bool operator ==(const color&) const;
         bool operator !=(const color&) const;
         
@@ -45,7 +53,7 @@ namespace math {
             return {a.r / c, a.g / c, a.b / c, a.a};
         }
         friend std::ostream& operator <<(std::ostream& os, const color& a) {
-            return os << "color(" << a.r << ", " << a.g << ", " << a.b << a.a << ")";
+            return os << "color(" << a.r << ", " << a.g << ", " << a.b << ", " << a.a << ")";
         }
     private:
         double r, g, b, a;

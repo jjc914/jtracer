@@ -9,5 +9,6 @@
 #define primatives_hpp
 
 #include "sphere.hpp"
+#include "box.hpp"
 
 #endif /* primatives_hpp */

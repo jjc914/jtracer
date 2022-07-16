@@ -9,7 +9,7 @@
 
 namespace renderer {
 
-    camera::camera(vec3<double> position, double aspectRatio, double angleOfView) :
+    camera::camera(vec3<double> position, const double aspectRatio, const double angleOfView) :
     position(position), aspectRatio(aspectRatio), angleOfView(angleOfView) {
         double verticalAngleOfView = 2 * rad2deg(atan(tan(deg2rad(angleOfView / 2)) / aspectRatio));
         viewportHeight = 2 * focalLength * tan(deg2rad(verticalAngleOfView / 2));

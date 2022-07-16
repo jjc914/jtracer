@@ -20,19 +20,20 @@
 
 namespace math {
 
-    double rad2deg(double rad);
-    double deg2rad(double deg);
+    double rad2deg(const double rad);
+    double deg2rad(const double deg);
     vec3<double> rejectionSampleSphere();
     vec3<double> rejectionSampleHemisphere(vec3<double> normal);
-    std::tuple<unsigned int, double, double> solveQuadratic(double a, double b, double c);
+    std::tuple<unsigned int, double, double> solveQuadratic(const double a, const double b, const double c);
+    double sampleBeckmannSpizzichinoCDF();
 
     template<typename T>
-    T randRange(T min, T max) {
+    T randRange(const T min, const T max) {
         return (T)(min + (rand() / (double)RAND_MAX) * (max - min));
     }
 
     template<typename T>
-    int roundAwayFromZero(T val) {
+    int roundAwayFromZero(const T val) {
         if (val > 0) {
             return ceil(val);
         } else {

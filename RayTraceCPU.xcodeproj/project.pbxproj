@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DA28CDE12867C4650090B9CB /* brdf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA28CDDF2867C4650090B9CB /* brdf.cpp */; };
+		DA28CDE528683CDC0090B9CB /* bar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA28CDE328683CDC0090B9CB /* bar.cpp */; };
+		DA6C9906287FD91000F761D9 /* lambertian.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA6C9904287FD90F00F761D9 /* lambertian.cpp */; };
+		DA6C990928804FF100F761D9 /* beckspizz.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA6C990728804FF100F761D9 /* beckspizz.cpp */; };
+		DA6C990C288175C700F761D9 /* box.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DA6C990A288175C700F761D9 /* box.cpp */; };
 		DAA2B28C27EC8E9E00E3BC56 /* sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B28A27EC8E9E00E3BC56 /* sphere.cpp */; };
 		DAA2B29127EC92E000E3BC56 /* primative.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B29027EC92E000E3BC56 /* primative.cpp */; };
 		DAA2B29727EE0B1100E3BC56 /* vec2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DAA2B29527EE0B1000E3BC56 /* vec2.cpp */; };
@@ -33,6 +38,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DA28CDDD2867C4390090B9CB /* materials.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = materials.hpp; sourceTree = "<group>"; };
+		DA28CDDF2867C4650090B9CB /* brdf.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = brdf.cpp; sourceTree = "<group>"; };
+		DA28CDE02867C4650090B9CB /* brdf.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = brdf.hpp; sourceTree = "<group>"; };
+		DA28CDE328683CDC0090B9CB /* bar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bar.cpp; sourceTree = "<group>"; };
+		DA28CDE428683CDC0090B9CB /* bar.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = bar.hpp; sourceTree = "<group>"; };
+		DA6C9904287FD90F00F761D9 /* lambertian.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lambertian.cpp; sourceTree = "<group>"; };
+		DA6C9905287FD91000F761D9 /* lambertian.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = lambertian.hpp; sourceTree = "<group>"; };
+		DA6C990728804FF100F761D9 /* beckspizz.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = beckspizz.cpp; sourceTree = "<group>"; };
+		DA6C990828804FF100F761D9 /* beckspizz.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = beckspizz.hpp; sourceTree = "<group>"; };
+		DA6C990A288175C700F761D9 /* box.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = box.cpp; sourceTree = "<group>"; };
+		DA6C990B288175C700F761D9 /* box.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = box.hpp; sourceTree = "<group>"; };
 		DAA2B28A27EC8E9E00E3BC56 /* sphere.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = sphere.cpp; sourceTree = "<group>"; };
 		DAA2B28B27EC8E9E00E3BC56 /* sphere.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = sphere.hpp; sourceTree = "<group>"; };
 		DAA2B28E27EC8ECE00E3BC56 /* primative.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = primative.hpp; sourceTree = "<group>"; };
@@ -70,6 +86,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DA28CDDB2867C42B0090B9CB /* materials */ = {
+			isa = PBXGroup;
+			children = (
+				DA28CDDD2867C4390090B9CB /* materials.hpp */,
+				DA28CDE02867C4650090B9CB /* brdf.hpp */,
+				DA28CDDF2867C4650090B9CB /* brdf.cpp */,
+				DA6C9905287FD91000F761D9 /* lambertian.hpp */,
+				DA6C9904287FD90F00F761D9 /* lambertian.cpp */,
+				DA6C990828804FF100F761D9 /* beckspizz.hpp */,
+				DA6C990728804FF100F761D9 /* beckspizz.cpp */,
+			);
+			path = materials;
+			sourceTree = "<group>";
+		};
+		DA28CDE228683CCB0090B9CB /* debug */ = {
+			isa = PBXGroup;
+			children = (
+				DA28CDE428683CDC0090B9CB /* bar.hpp */,
+				DA28CDE328683CDC0090B9CB /* bar.cpp */,
+			);
+			path = debug;
+			sourceTree = "<group>";
+		};
 		DAA2B28927EC8E7800E3BC56 /* primatives */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,15 +117,26 @@
 				DAA2B29027EC92E000E3BC56 /* primative.cpp */,
 				DAA2B28B27EC8E9E00E3BC56 /* sphere.hpp */,
 				DAA2B28A27EC8E9E00E3BC56 /* sphere.cpp */,
+				DA6C990B288175C700F761D9 /* box.hpp */,
+				DA6C990A288175C700F761D9 /* box.cpp */,
 			);
 			path = primatives;
+			sourceTree = "<group>";
+		};
+		DAB0D13E284D979F00990526 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DAC1EF5027E9A10200BF5CB7 = {
 			isa = PBXGroup;
 			children = (
+				DAC1EF5C27E9A10200BF5CB7 /* main.cpp */,
 				DAC1EF5B27E9A10200BF5CB7 /* RayTraceCPU */,
 				DAC1EF5A27E9A10200BF5CB7 /* Products */,
+				DAB0D13E284D979F00990526 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,10 +151,11 @@
 		DAC1EF5B27E9A10200BF5CB7 /* RayTraceCPU */ = {
 			isa = PBXGroup;
 			children = (
+				DA28CDE228683CCB0090B9CB /* debug */,
+				DA28CDDB2867C42B0090B9CB /* materials */,
 				DAA2B28927EC8E7800E3BC56 /* primatives */,
 				DAC1EF7327E9EED100BF5CB7 /* renderer */,
 				DAC1EF6427E9A47300BF5CB7 /* math */,
-				DAC1EF5C27E9A10200BF5CB7 /* main.cpp */,
 			);
 			path = RayTraceCPU;
 			sourceTree = "<group>";
@@ -167,7 +218,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					DAC1EF5827E9A10200BF5CB7 = {
 						CreatedOnToolsVersion = 13.3;
@@ -197,17 +248,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAC1EF5D27E9A10200BF5CB7 /* main.cpp in Sources */,
 				DAC1EF7227E9AE3100BF5CB7 /* vec3.cpp in Sources */,
 				DAC1EF7927E9EF4B00BF5CB7 /* color.cpp in Sources */,
 				DAA2B29A27EF552800E3BC56 /* rayhit.cpp in Sources */,
+				DA6C9906287FD91000F761D9 /* lambertian.cpp in Sources */,
+				DA6C990928804FF100F761D9 /* beckspizz.cpp in Sources */,
+				DA28CDE528683CDC0090B9CB /* bar.cpp in Sources */,
 				DAA2B28C27EC8E9E00E3BC56 /* sphere.cpp in Sources */,
+				DA6C990C288175C700F761D9 /* box.cpp in Sources */,
 				DAA2B29727EE0B1100E3BC56 /* vec2.cpp in Sources */,
 				DAC1EF7627E9EEE100BF5CB7 /* camera.cpp in Sources */,
 				DAC1EF8427EADB0D00BF5CB7 /* screen.cpp in Sources */,
 				DAA2B29127EC92E000E3BC56 /* primative.cpp in Sources */,
-				DAC1EF5D27E9A10200BF5CB7 /* main.cpp in Sources */,
 				DAC1EF7C27E9F64C00BF5CB7 /* ray.cpp in Sources */,
 				DAC1EF8127EAA68400BF5CB7 /* math.cpp in Sources */,
+				DA28CDE12867C4650090B9CB /* brdf.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,9 +382,17 @@
 		DAC1EF6127E9A10200BF5CB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4K22KZ7BZA;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/oidn/build",
+					"$(PROJECT_DIR)/lib/oidn/build",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -336,9 +400,17 @@
 		DAC1EF6227E9A10200BF5CB7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4K22KZ7BZA;
 				ENABLE_HARDENED_RUNTIME = YES;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/oidn/build",
+					"$(PROJECT_DIR)/lib/oidn/build",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

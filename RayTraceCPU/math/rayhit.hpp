@@ -11,16 +11,20 @@
 #include "vec3.hpp"
 #include "color.hpp"
 
+#include "primatives.hpp"
+
+using namespace primatives;
+
 namespace math {
 
     struct rayhit {
         rayhit();
-        rayhit(std::string name, vec3<double> position, vec3<double> normal, color pColor);
+        rayhit(std::string name, vec3<double> position, vec3<double> normal, primative* prim);
         
         std::string name;
         vec3<double> position;
         vec3<double> normal;
-        color pColor;
+        primatives::primative* prim;
     };
 }
 

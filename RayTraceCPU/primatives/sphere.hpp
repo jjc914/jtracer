@@ -12,20 +12,24 @@
 
 #include "vec3.hpp"
 #include "primative.hpp"
-#include "color.hpp"
+#include "brdf.hpp"
 
 using namespace math;
+using namespace materials;
 
 namespace primatives {
 
     class sphere : public primative {
     public:
-        sphere(std::string name, vec3<double> position, double radius, color pColor);
+        sphere(const std::string name, brdf* mat, const vec3<double> position, const double radius);
         
-        std::list<vec3<double>> intersect(const ray ray) const override;
+        std::list<vec3<double>> intersect(const ray r) const override;
+        vec3<double> normalAtPoint(const vec3<double> origin, const vec3<double> point) const override;
+        
+        bool intersects(const ray r) const override;
+        bool encloses(const vec3<double> point) const override;
     private:
         double radius;
-        color pColor;
     };
 }
 

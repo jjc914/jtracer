@@ -8,18 +8,18 @@
 #include "primative.hpp"
 
 namespace primatives {
-    primative::primative(std::string name, vec3<double> position, color pColor) : name(name), position(position), pColor(pColor) {
+    primative::primative(const std::string name, brdf* mat, const vec3<double> position) : name(name), mat(mat), position(position) {
     }
 
     std::string primative::getName() const {
         return name;
     }
 
-    vec3<double> primative::getPosition() const {
-        return position;
+    brdf* primative::getMaterial() const {
+        return mat;
     }
 
-    color primative::getColor() const {
-        return pColor;
+    vec3<double> primative::getPosition() const {
+        return position;
     }
 }

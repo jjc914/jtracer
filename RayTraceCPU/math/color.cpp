@@ -10,7 +10,20 @@
 namespace math {
 
     color::color(double r, double g, double b, double a) : r(r), g(g), b(b), a(a){
-        
+    }
+
+    color& color::clamp() {
+        r = std::clamp(r, 0.0, 1.0);
+        g = std::clamp(g, 0.0, 1.0);
+        b = std::clamp(b, 0.0, 1.0);
+        return *this;
+    }
+
+    color& color::gammaCorrect() {
+        r = std::sqrt(r);
+        g = std::sqrt(g);
+        b = std::sqrt(b);
+        return *this;
     }
 
     double color::getR() const {
@@ -53,6 +66,14 @@ namespace math {
         return {r - c.r, g - c.g, b - c.b, a};
     }
 
+    color color::operator *(const color& c) const {
+        return {r * c.r, g * c.g, b * c.b, a};
+    }
+
+    color color::operator /(const color& c) const {
+        return {r / c.r, g / c.g, b / c.b, a};
+    }
+
     color& color::operator +=(const color& c) {
         r += c.r;
         g += c.g;
@@ -64,6 +85,20 @@ namespace math {
         r -= c.r;
         g -= c.g;
         b -= c.b;
+        return *this;
+    }
+
+    color& color::operator *=(const color& c) {
+        r *= c.r;
+        g *= c.g;
+        b *= c.b;
+        return *this;
+    }
+
+    color& color::operator /=(const color& c) {
+        r /= c.r;
+        g /= c.g;
+        b /= c.b;
         return *this;
     }
 

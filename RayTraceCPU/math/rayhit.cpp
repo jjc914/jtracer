@@ -12,6 +12,6 @@ namespace math {
     rayhit::rayhit() {
     }
 
-    rayhit::rayhit(std::string name, vec3<double> position, vec3<double> normal, color pColor) : name(name), position(position), normal(normal), pColor(pColor) {
+    rayhit::rayhit(std::string name, vec3<double> position, vec3<double> normal, primative* prim) : name(name), position(position), normal(normal), prim(prim) {
     }
 }

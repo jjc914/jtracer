@@ -16,7 +16,7 @@ namespace renderer {
 
     class camera {
     public:
-        camera(vec3<double> position, double aspectRatio, double angleOfView);
+        camera(vec3<double> position, const double aspectRatio, const double angleOfView);
         
         vec3<double> getPosition() const;
         double getFocalLength() const;

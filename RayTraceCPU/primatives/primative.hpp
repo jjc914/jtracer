@@ -12,24 +12,30 @@
 
 #include "vec3.hpp"
 #include "ray.hpp"
+#include "brdf.hpp"
 
 using namespace math;
+using namespace materials;
 
 namespace primatives {
 
     class primative {
     public:
         virtual std::list<vec3<double>> intersect(const ray r) const = 0;
+        virtual vec3<double> normalAtPoint(const vec3<double> origin, vec3<double> point) const = 0;
+        
+        virtual bool intersects(const ray r) const = 0;
+        virtual bool encloses(const vec3<double> point) const = 0;
         
         std::string getName() const;
+        brdf* getMaterial() const;
         vec3<double> getPosition() const;
-        color getColor() const;
     protected:
-        primative(std::string name, vec3<double> position, color pColor);
+        primative(std::string name, brdf* mat, vec3<double> position);
         
         std::string name;
+        brdf* mat;
         vec3<double> position;
-        color pColor;
     };
 }
 

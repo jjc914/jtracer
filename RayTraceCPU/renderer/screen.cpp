@@ -6,7 +6,6 @@
 //
 
 #include <fstream>
-#include <iostream>
 
 #include "screen.hpp"
 
@@ -16,7 +15,7 @@ namespace renderer {
                 mainCamera(mainCamera), width(width), height(height), refreshColor(refreshColor) {
     }
 
-    ray screen::screenToRay(unsigned int x, unsigned int y, double dx, double dy) {
+    ray screen::screenToRay(const unsigned int x, const unsigned int y, const double dx, const double dy) {
         double viewportWidth = mainCamera->getViewportWidth();
         double viewportHeight = mainCamera->getViewportHeight();
         double focalLength = mainCamera->getFocalLength();
@@ -29,94 +28,94 @@ namespace renderer {
         return ray(mainCamera->getPosition(), vec3<double>(xR, yR, -focalLength));
     }
 
-    int screen::render(const std::vector<primative*>* world, const unsigned int aaSamples) {
-        std::vector<vec2<double>> aaSamplePositions = this->calculateSamplePositions(aaSamples);
+    int screen::render(const std::vector<primative*>* world, const unsigned int samples, const unsigned int bounces, const unsigned int reflections) {
+        debug::bar progressBar = debug::bar();
         
-        std::ofstream file("output.ppm");
+        std::vector<vec2<double>> samplePositions = this->calculateSamplePositions(samples);
+        
+        std::ofstream file(std::to_string(width) + "p" + std::to_string(samples) + "s.ppm");
         file << "P3" << "\n";
         file << width << " " << height << "\n";
         file << 255 << "\n";
+        int i = 1;
         for (int y = height - 1; y >= 0; y--) {
             for (int x = 0; x < width; x++) {
-                color c = this->calculatePixel(world, x, y, aaSamples, aaSamplePositions);
+                color c = this->calculatePixel(world, x, y, samples, samplePositions, bounces, reflections);
+                c.clamp();
+                c.gammaCorrect();
                 file << (int)(c.getR() * 255.0) << " " << (int)(c.getG() * 255.0) << " " << (int)(c.getB() * 255.0) << "   ";
+                progressBar.setProgress((double)i / (width * height));
+                progressBar.print();
+                i++;
             }
             file << "\n";
         }
         file.close();
         
-        std::ifstream f("output.ppm");
+        std::ifstream f(std::to_string(width) + "p" + std::to_string(samples) + "s.ppm");
         return f.good();
     }
 
     bool screen::castRay(const std::vector<primative*>* world, const ray r, rayhit* hit) {
-        double closestDst = INFINITY;
-        std::string closestName;
-        vec3<double> closestOrigin;
-        vec3<double> closestNormal;
-        color closestColor = refreshColor;
+        primative* closestPrim = nullptr;
+        double closestDist = INFINITY;
+        vec3<double> closestPos;
         
-        bool didHit = false;
-        for (primative* p : *world) {
-            std::list<vec3<double>> points = p->intersect(r);
-            if (points.size() > 0) {
-                vec3<double> cls = points.front();
-                vec3<double> vDn = (cls - p->getPosition()).normalize();
-                double dst = cls.getMagnitude();
-                if (dst < closestDst) {
-                    closestName = p->getName();
-                    closestColor = p->getColor();
-                    closestDst = dst;
-                    closestOrigin = cls;
-                    closestNormal = vDn;
-                    didHit = true;
+        for (primative* prim : *world) {
+            std::list<vec3<double>> intersects = prim->intersect(r);
+            if (intersects.size() > 0) {
+                vec3<double> intersect = intersects.front();
+                double dist = vec3<double>::distance(intersect, r.getOrigin());
+                if (dist < closestDist) {
+                    closestPrim = prim;
+                    closestDist = dist;
+                    closestPos = intersect;
                 }
             }
         }
-        if (hit) {
-            hit->name = closestName;
-            hit->position = closestOrigin;
-            hit->normal = closestNormal;
-            hit->pColor = closestColor;
-        }
-        return didHit;
-    }
-
-    bool screen::castBouncingRay(const std::vector<primative*>* world, const ray r, color* outColor, unsigned int depth) {
-        if (depth > 10) {
-            return false;
-        }
-        rayhit hit;
-        if (this->castRay(world, r, &hit)) {
-            (*outColor).setR(outColor->getR() * hit.pColor.getR());
-            (*outColor).setG(outColor->getG() * hit.pColor.getG());
-            (*outColor).setB(outColor->getB() * hit.pColor.getB());
-            // TODO: Use BSDF
-//            vec3<double> bounce = vec3<double>::reflect(r.getDirection(), hit.normal);
-            vec3<double> bounce = rejectionSampleHemisphere(hit.normal);
-            bounce.normalize();
-            
-            *outColor *=  1.0 - (depth / 10.0);
-            ray rBounce(hit.position, bounce);
-            this->castBouncingRay(world, rBounce, outColor, depth + 1);
+        
+        if (closestPrim) {
+            hit->name = closestPrim->getName();
+            hit->position = closestPos;
+            hit->prim = closestPrim;
+            hit->normal = closestPrim->normalAtPoint(r.getOrigin(), closestPos);
             return true;
         }
-        (*outColor).setR(outColor->getR() * refreshColor.getR());
-        (*outColor).setG(outColor->getG() * refreshColor.getG());
-        (*outColor).setB(outColor->getB() * refreshColor.getB());
+        
         return false;
     }
 
-    color screen::calculatePixel(const std::vector<primative*>* world, unsigned int x, unsigned int y, unsigned int samples, std::vector<vec2<double>> samplePositions) {
-        color c = color(0.0, 0.0, 0.0);
+    color screen::tracePath(const std::vector<primative*>* world, const ray r, const int bounces, const int reflections, const int depth) {
+        if (depth > bounces) {
+            return color(0.0, 0.0, 0.0);
+        }
+        
+        rayhit hit = rayhit();
+        if (castRay(world, r, &hit)) {
+            color average = color(0.0, 0.0, 0.0);
+            for (int i = 0; i < reflections; i++) {
+                vec3<double> reflectionDirection = hit.prim->getMaterial()->sampleBounceDirection(r.getDirection(), hit.normal);
+                ray reflectionRay = ray(hit.position + reflectionDirection * 0.001, reflectionDirection);
+                average += (hit.prim->getMaterial()->getEmissionColor() * hit.prim->getMaterial()->getEmissionPower() + tracePath(world, reflectionRay, bounces, reflections, depth + 1) * vec3<double>::dot(hit.normal, reflectionDirection) * hit.prim->getMaterial()->getDiffuseColor() * 2.0);
+            }
+            average /= reflections;
+            return average;
+        }
+        if (depth <= 0) return refreshColor;
+        
+        return color(0.0, 0.0, 0.0);
+    }
+
+    color screen::calculatePixel(const std::vector<primative*>* world, const int x, const int y, const int samples, const std::vector<vec2<double>> samplePositions, const int bounces, const int reflections) {
+        color pixelColor = color(0.0, 0.0, 0.0);
         
         for (vec2<double> samplePos : samplePositions) {
             ray r = this->screenToRay(x, y, samplePos.getX(), samplePos.getY());
-            color sampleColor(1.0, 1.0, 1.0);
-            this->castBouncingRay(world, r, &sampleColor);
-            c += sampleColor / samples;
+            color sampleColor = this->tracePath(world, r, bounces, reflections);
+            pixelColor += sampleColor;
         }
-        return c;
+//        pixelColor /= 10.0;
+        return pixelColor / samples;
     }
 
     std::vector<vec2<double>> screen::calculateSamplePositions(const unsigned int samples) {

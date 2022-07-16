@@ -11,6 +11,7 @@
 #include <vector>
 
 #include "math.hpp"
+#include "bar.hpp"
 
 #include "camera.hpp"
 #include "primatives.hpp"
@@ -27,8 +28,8 @@ namespace renderer {
     public:
         screen(camera* mainCamera, unsigned int width, unsigned int height, color refreshColor = color(0.0, 0.0, 0.0));
 
-        ray screenToRay(unsigned int x, unsigned int y, double dx = 0, double dy = 0);
-        int render(const std::vector<primative*>* world, const unsigned int aaSamples);
+        ray screenToRay(const unsigned int x, const unsigned int y, const double dx = 0, const double dy = 0);
+        int render(const std::vector<primative*>* world, const unsigned int aaSamples, const unsigned int bounces, const unsigned int reflections);
     private:
         camera* mainCamera;
         unsigned int width;
@@ -36,9 +37,10 @@ namespace renderer {
         color refreshColor;
         
         bool castRay(const std::vector<primative*>* world, const ray ray, rayhit* hit);
-        bool castBouncingRay(const std::vector<primative*>* world, const ray ray, color* outColor, unsigned int depth = 0);
+        color tracePath(const std::vector<primative*>* world, const ray ray, const int bounces, const int reflections, const int depth = 0);
+    
         std::vector<vec2<double>> calculateSamplePositions(const unsigned int samples);
-        color calculatePixel(const std::vector<primative*>* world, unsigned int x, unsigned int y, unsigned int samples, std::vector<vec2<double>> samplePositions);
+        color calculatePixel(const std::vector<primative*>* world, const int x, const int y, const int samples, const std::vector<vec2<double>> samplePositions, const int bounces, const int reflections);
     };
 }
 
