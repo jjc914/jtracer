@@ -420,16 +420,4 @@ src/debug/CMakeFiles/lib-debug.dir/bar.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/math.h \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/vec2.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/vec3.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/ray.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/color.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/rayhit.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/../primatives/primatives.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/../primatives/sphere.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/list \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/../primatives/primative.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/vec3.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/ray.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/materials/brdf.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/color.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/../primatives/box.hpp
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/vec3.hpp

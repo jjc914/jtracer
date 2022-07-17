@@ -417,7 +417,18 @@ src/math/CMakeFiles/lib-math.dir/color.cpp.o: ../src/math/color.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/math.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/math.h
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/math.h \
+  ../src/math/math.hpp \
+  ../src/math/vec2.hpp \
+  ../src/math/vec3.hpp \
+  ../src/math/ray.hpp \
+  ../src/math/rayhit.hpp \
+  ../src/primatives/primatives.hpp \
+  ../src/primatives/sphere.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/list \
+  ../src/primatives/primative.hpp \
+  ../src/materials/brdf.hpp \
+  ../src/primatives/box.hpp
 
 src/math/CMakeFiles/lib-math.dir/math.cpp.o: ../src/math/math.cpp \
   ../src/math/math.hpp \
@@ -2538,6 +2549,8 @@ src/math/CMakeFiles/lib-math.dir/vec3.cpp.o: ../src/math/vec3.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/istream:
 
+../src/math/math.cpp:
+
 ../src/materials/brdf.hpp:
 
 ../src/primatives/primatives.hpp:
@@ -2547,8 +2560,6 @@ src/math/CMakeFiles/lib-math.dir/vec3.cpp.o: ../src/math/vec3.cpp \
 ../src/math/vec2.hpp:
 
 ../src/math/math.hpp:
-
-../src/math/math.cpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath:
 

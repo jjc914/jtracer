@@ -13,9 +13,9 @@ namespace math {
     }
 
     color& color::clamp() {
-        r = std::clamp(r, 0.0, 1.0);
-        g = std::clamp(g, 0.0, 1.0);
-        b = std::clamp(b, 0.0, 1.0);
+        r = math::clamp(r, 0.0, 1.0);
+        g = math::clamp(g, 0.0, 1.0);
+        b = math::clamp(b, 0.0, 1.0);
         return *this;
     }
 

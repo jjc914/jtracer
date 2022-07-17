@@ -423,4 +423,6 @@ src/primatives/CMakeFiles/lib-primatives.dir/box.cpp.o: \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/primatives/primative.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/ray.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/color.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/math.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/vec2.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/materials/brdf.hpp

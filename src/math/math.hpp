@@ -13,10 +13,6 @@
 
 #include "vec2.hpp"
 #include "vec3.hpp"
-#include "ray.hpp"
-#include "rayhit.hpp"
-
-#include "color.hpp"
 
 namespace math {
 
@@ -30,6 +26,11 @@ namespace math {
     template<typename T>
     T randRange(const T min, const T max) {
         return (T)(min + (rand() / (double)RAND_MAX) * (max - min));
+    }
+
+    template<typename T>
+    T clamp(const T val, const T min, const T max) {
+        return val < min ? min : (val > max ? max : val);
     }
 
     template<typename T>

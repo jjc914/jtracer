@@ -418,6 +418,8 @@ src/math/CMakeFiles/lib-math.dir/rayhit.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/_types/_nl_item.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/color.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/math.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/vec2.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/../primatives/primatives.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/../primatives/sphere.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/list \

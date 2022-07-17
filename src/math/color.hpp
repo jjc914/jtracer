@@ -11,6 +11,8 @@
 #include <ostream>
 #include <cmath>
 
+#include "math.hpp"
+
 namespace math {
 
     class color {

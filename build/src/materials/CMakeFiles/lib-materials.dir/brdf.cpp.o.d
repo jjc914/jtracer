@@ -417,4 +417,6 @@ src/materials/CMakeFiles/lib-materials.dir/brdf.cpp.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/math.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/math.h \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/math.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/vec2.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/vec3.hpp

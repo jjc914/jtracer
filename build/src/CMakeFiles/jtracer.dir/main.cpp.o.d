@@ -424,18 +424,18 @@ src/CMakeFiles/jtracer.dir/main.cpp.o: \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/vec2.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/cmath \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/vec3.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/ray.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/color.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/rayhit.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/../primatives/primatives.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/../primatives/sphere.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/list \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/../primatives/primative.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/materials/brdf.hpp \
-  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/../primatives/box.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/renderer/screen.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/bar.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/debug/../math/math.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/primatives/primatives.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/primatives/sphere.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk/usr/include/c++/v1/list \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/primatives/primative.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/ray.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/color.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/materials/brdf.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/primatives/box.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/rayhit.hpp \
+  /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/math/../primatives/primatives.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/materials/materials.hpp \
   /Users/joshuachasnov/Documents/ProgrammingProjects/CppProjects/jtracer/src/materials/lambertian.hpp
