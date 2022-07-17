@@ -10,6 +10,7 @@
 
 #include <list>
 
+#include "math/math.hpp"
 #include "math/vec3.hpp"
 #include "primative.hpp"
 #include "materials/brdf.hpp"

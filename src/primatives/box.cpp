@@ -70,8 +70,8 @@ namespace primatives {
         if (tMinX > tMaxZ || tMinZ > tMaxX) return points;
         if (tMinY > tMaxZ || tMinZ > tMaxY) return points;
 
-        double tMinInt = std::max(tMinX, std::max(tMinY, tMinZ));
-        double tMaxInt = std::min(tMaxX, std::min(tMaxY, tMaxZ));
+        double tMinInt = math::max(tMinX, math::max(tMinY, tMinZ));
+        double tMaxInt = math::min(tMaxX, math::min(tMaxY, tMaxZ));
         points.push_back(r.getOrigin() + r.getDirection() * tMinInt);
         points.push_back(r.getOrigin() + r.getDirection() * tMaxInt);
         

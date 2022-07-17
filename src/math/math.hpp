@@ -25,13 +25,23 @@ namespace math {
     double sampleBeckmannSpizzichinoCDF();
 
     template<typename T>
-    T randRange(const T min, const T max) {
-        return (T)(min + (rand() / (double)RAND_MAX) * (max - min));
+    T min(const T a, const T b) {
+        return a < b ? a : b;
+    }
+
+    template<typename T>
+    T max(const T a, const T b) {
+        return a > b ? a : b;
     }
 
     template<typename T>
     T clamp(const T val, const T min, const T max) {
         return val < min ? min : (val > max ? max : val);
+    }
+
+    template<typename T>
+    T randRange(const T min, const T max) {
+        return (T)(min + (rand() / (double)RAND_MAX) * (max - min));
     }
 
     template<typename T>
