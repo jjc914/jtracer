@@ -1,2 +1,0 @@
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc liblib-math.a CMakeFiles/lib-math.dir/math.cpp.o CMakeFiles/lib-math.dir/vec2.cpp.o CMakeFiles/lib-math.dir/vec3.cpp.o CMakeFiles/lib-math.dir/color.cpp.o CMakeFiles/lib-math.dir/ray.cpp.o CMakeFiles/lib-math.dir/rayhit.cpp.o
-/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib liblib-math.a
