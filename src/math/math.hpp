@@ -8,6 +8,7 @@
 #ifndef math_hpp
 #define math_hpp
 
+#define _USE_MATH_DEFINES
 #include <math.h>
 #include <tuple>
 
