@@ -1,0 +1,2 @@
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc liblib-renderer.a CMakeFiles/lib-renderer.dir/screen.cpp.o CMakeFiles/lib-renderer.dir/camera.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib liblib-renderer.a
