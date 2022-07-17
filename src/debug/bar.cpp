@@ -19,7 +19,7 @@ namespace debug {
             int percentage = round((double)steps * (100.0 / 49.0));
             std::cout << "\r[" << std::string(steps, '#') << std::string(49 - steps, '-') << "] " << percentage << "%" << std::flush;
         }
-        if (progress >= 1.0 - __DBL_EPSILON__) {
+        if (progress >= 1.0 - std::numeric_limits<double>::epsilon()) {
             std::cout << "]" << std::endl;;
         }
         roundedSteps = steps;
