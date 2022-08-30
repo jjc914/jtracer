@@ -1,10 +1,3 @@
-//
-//  vec2.cpp
-//  RayTraceCPU
-//
-//  Created by Joshua Chasnov on 25/3/2022.
-//
-
 #include "vec2.hpp"
 
 namespace math {
@@ -123,10 +116,8 @@ namespace math {
 
     template <typename T>
     double vec2<T>::distance(const vec2<T>& a, const vec2<T>& b) {
-        return sqrt(
-                    (a.getX() - b.getX()) * (a.getX() - b.getX()) +
-                    (a.getY() - b.getY()) * (a.getY() - b.getY())
-                    );
+        return sqrt((a.getX() - b.getX()) * (a.getX() - b.getX()) +
+                    (a.getY() - b.getY()) * (a.getY() - b.getY()));
     }
 
     template class vec2<int>;

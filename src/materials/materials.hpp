@@ -9,5 +9,8 @@
 #define materials_hpp
 
 #include "lambertian.hpp"
+#include "torrancesparrow.cpp"
+
+#include "microfacets/beckmannspizzichino.hpp"
 
 #endif /* materials_hpp */

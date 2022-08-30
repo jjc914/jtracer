@@ -1,18 +1,11 @@
-//
-//  lambertian.cpp
-//  RayTraceCPU
-//
-//  Created by Joshua Chasnov on 14/7/2022.
-//
-
 #include "lambertian.hpp"
 
 namespace materials {
 
-    lambertian::lambertian(const color diffuseColor, const color emissionColor, const double emissionPower) : brdf(diffuseColor, emissionColor, emissionPower) {
+    lambertian::lambertian(const color albedo, const color emissionColor, const double emissionPower) : brdf(albedo, emissionColor, emissionPower) {
     }
 
-    vec3<double> lambertian::sampleBounceDirection(vec3<double> inDirection, vec3<double> normal) const {
-        return math::rejectionSampleHemisphere(normal);
+    color lambertian::evaluate(vec3<double> wo, vec3<double> wi) const {
+        return getAlbedo();
     }
 }

@@ -29,7 +29,7 @@ namespace renderer {
         screen(camera* mainCamera, unsigned int width, unsigned int height, color refreshColor = color(0.0, 0.0, 0.0));
 
         ray screenToRay(const unsigned int x, const unsigned int y, const double dx = 0, const double dy = 0);
-        int render(const std::vector<primative*>* world, const unsigned int aaSamples, const unsigned int bounces, const unsigned int reflections);
+        int render(const std::vector<primative*>* world, const unsigned int aaSamples, const unsigned int bounces, const unsigned int reflections, const std::string fileName = "out.ppm");
     private:
         camera* mainCamera;
         unsigned int width;

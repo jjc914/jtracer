@@ -28,12 +28,12 @@ namespace renderer {
         return ray(mainCamera->getPosition(), vec3<double>(xR, yR, -focalLength));
     }
 
-    int screen::render(const std::vector<primative*>* world, const unsigned int samples, const unsigned int bounces, const unsigned int reflections) {
+    int screen::render(const std::vector<primative*>* world, const unsigned int samples, const unsigned int bounces, const unsigned int reflections, const std::string fileName) {
         debug::bar progressBar = debug::bar();
         
         std::vector<vec2<double>> samplePositions = this->calculateSamplePositions(samples);
         
-        std::ofstream file(std::to_string(width) + "p" + std::to_string(samples) + "s.ppm");
+        std::ofstream file(fileName);
         file << "P3" << "\n";
         file << width << " " << height << "\n";
         file << 255 << "\n";
@@ -94,9 +94,15 @@ namespace renderer {
         if (castRay(world, r, &hit)) {
             color average = color(0.0, 0.0, 0.0);
             for (int i = 0; i < reflections; i++) {
-                vec3<double> reflectionDirection = hit.prim->getMaterial()->sampleBounceDirection(r.getDirection(), hit.normal);
+                // vec3<double> reflectionDirection = hit.prim->getMaterial()->sampleBounceDirection(r.getDirection(), hit.normal);
+                vec3<double> reflectionDirection = rejectionSampleHemisphere(hit.normal);
                 ray reflectionRay = ray(hit.position + reflectionDirection * 0.001, reflectionDirection);
-                average += (hit.prim->getMaterial()->getEmissionColor() * hit.prim->getMaterial()->getEmissionPower() + tracePath(world, reflectionRay, bounces, reflections, depth + 1) * vec3<double>::dot(hit.normal, reflectionDirection) * hit.prim->getMaterial()->getDiffuseColor() * 2.0);
+                if (fabs(hit.prim->getMaterial()->getEmissionPower()) < std::numeric_limits<double>::epsilon()) {
+                    average += (hit.prim->getMaterial()->getEmissionColor() * hit.prim->getMaterial()->getEmissionPower() + 
+                               tracePath(world, reflectionRay, bounces, reflections, depth + 1) * vec3<double>::dot(hit.normal, reflectionDirection) * hit.prim->getMaterial()->evaluate(reflectionDirection, r.getDirection()) * 2.0);
+                } else {
+                    average += hit.prim->getMaterial()->getEmissionColor() * hit.prim->getMaterial()->getEmissionPower();
+                }
             }
             average /= reflections;
             return average;

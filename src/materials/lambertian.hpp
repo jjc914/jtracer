@@ -1,10 +1,3 @@
-//
-//  lambertian.hpp
-//  RayTraceCPU
-//
-//  Created by Joshua Chasnov on 14/7/2022.
-//
-
 #ifndef lambertian_hpp
 #define lambertian_hpp
 
@@ -17,10 +10,10 @@ namespace materials {
 
     class lambertian : public brdf { //TODO: Oren-Nayar microfacet reflection
     public:
-        lambertian(const color diffuseColor, const color emissionColor = color(0.0, 0.0, 0.0), const double emissionPower = 0.0);
+        lambertian(const color albedo, const color emissionColor = color(0.0, 0.0, 0.0), const double emissionPower = 0.0);
         
-        vec3<double> sampleBounceDirection(vec3<double> inDirection, vec3<double> normal) const;
+        color evaluate(vec3<double> wo, vec3<double> wi) const;
     };
 }
 
-#endif /* lambertian_hpp */
+#endif

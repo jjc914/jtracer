@@ -1,10 +1,3 @@
-//
-//  brdf.hpp
-//  RayTraceCPU
-//
-//  Created by Joshua Chasnov on 25/6/2022.
-//
-
 #ifndef brdf_hpp
 #define brdf_hpp
 
@@ -17,18 +10,18 @@ namespace materials {
 
     class brdf {
     public:
-        brdf(const color diffuseColor, const color emissionColor = color(0.0, 0.0, 0.0), const double emissionPower = 0.0);
+        brdf(const color albedo, const color emissionColor = color(0.0, 0.0, 0.0), const double emissionPower = 0.0);
         
-        virtual vec3<double> sampleBounceDirection(vec3<double> inDirection, vec3<double> normal) const = 0;
+        virtual color evaluate(vec3<double> wo, vec3<double> wi) const = 0;
         
-        color getDiffuseColor() const;
+        color getAlbedo() const;
         color getEmissionColor() const;
         double getEmissionPower() const;
     private:
-        color diffuseColor;
+        color albedo;
         color emissionColor;
         double emissionPower;
     };
 }
 
-#endif /* brdf_hpp */
+#endif

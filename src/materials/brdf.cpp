@@ -1,19 +1,12 @@
-//
-//  brdf.cpp
-//  RayTraceCPU
-//
-//  Created by Joshua Chasnov on 25/6/2022.
-//
-
 #include "brdf.hpp"
 
 namespace materials {
 
-    brdf::brdf(const color diffuseColor, const color emissionColor, const double emissionPower) : diffuseColor(diffuseColor), emissionColor(emissionColor), emissionPower(emissionPower) {
+    brdf::brdf(const color albedo, const color emissionColor, const double emissionPower) : albedo(albedo), emissionColor(emissionColor), emissionPower(emissionPower) {
     }
 
-    color brdf::getDiffuseColor() const {
-        return diffuseColor;
+    color brdf::getAlbedo() const {
+        return albedo;
     }
 
     color brdf::getEmissionColor() const {

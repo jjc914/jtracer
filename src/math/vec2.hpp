@@ -1,10 +1,3 @@
-//
-//  vec2.hpp
-//  RayTraceCPU
-//
-//  Created by Joshua Chasnov on 25/3/2022.
-//
-
 #ifndef vec2_hpp
 #define vec2_hpp
 
@@ -43,14 +36,11 @@ namespace math {
         friend vec2<T> operator *(const T c, const vec2<T>& a) {
             return {a.getX() * c, a.getY() * c};
         }
-        friend vec2<T> operator /(const T c, const vec2<T>& a) {
-            return {a.getX() / c, a.getY() / c};
-        }
+        
         friend std::ostream& operator <<(std::ostream& os, const vec2<T>& a) {
             return os << "vec3(" << a.x << ", " << a.y << ")";
         }
         
-        // TODO: ask daddy about vec2 operations
         static double dot(const vec2<T>& a, const vec2<T>& b);
         static double distance(const vec2<T>& a, const vec2<T>& b);
     private:
@@ -59,6 +49,10 @@ namespace math {
         
         void recalculateMagnitude();
     };
+
+    extern template class vec2<int>;
+    extern template class vec2<float>;
+    extern template class vec2<double>;
 }
 
-#endif /* vec2_hpp */
+#endif

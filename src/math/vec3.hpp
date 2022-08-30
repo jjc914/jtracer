@@ -1,10 +1,3 @@
-//
-//  vec3.hpp
-//  RayTraceCPU
-//
-//  Created by Joshua Chasnov on 22/3/2022.
-//
-
 #ifndef vec3_hpp
 #define vec3_hpp
 
@@ -43,11 +36,9 @@ namespace math {
         vec3<T>& operator /=(const T c);
         
         friend vec3<T> operator *(const T c, const vec3<T>& a) {
-            return {a.getX() * c, a.getY() * c, a.getZ() * c};
+            return {a.x * c, a.y * c, a.z * c};
         }
-        friend vec3<T> operator /(const T c, const vec3<T>& a) {
-            return {a.getX() / c, a.getY() / c, a.getZ() / c};
-        }
+
         friend std::ostream& operator <<(std::ostream& os, const vec3<T>& a) {
             return os << "vec3(" << a.x << ", " << a.y << ", " << a.z << ")";
         }
@@ -62,5 +53,9 @@ namespace math {
         
         void recalculateMagnitude();
     };
+
+    extern template class vec3<int>;
+    extern template class vec3<float>;
+    extern template class vec3<double>;
 }
-#endif /* vec3_hpp */
+#endif

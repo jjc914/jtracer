@@ -3,6 +3,7 @@ add_library(
     math.hpp math.cpp
     vec2.hpp vec2.cpp
     vec3.hpp vec3.cpp
+    mat3x3.hpp mat3x3.cpp
     color.hpp color.cpp
     ray.hpp ray.cpp
     rayhit.hpp rayhit.cpp
