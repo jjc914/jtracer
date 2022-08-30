@@ -53,7 +53,7 @@ namespace math {
 
     double sinAzimuth(const vec3<double> w) {
         double s = sinZenith(w);
-        return std::abs(s) < std::numeric_limits<double>::epsilon() ? 0 : std::clamp(w.getY() / s, -1.0, 1.0);
+        return std::abs(s) < std::numeric_limits<double>::epsilon() ? 0 : math::clamp<double>(w.getY() / s, -1.0, 1.0);
     }
 
     double sin2Azimuth(const vec3<double> w) {
@@ -63,7 +63,7 @@ namespace math {
 
     double cosAzimuth(const vec3<double> w) {
         double s = sinZenith(w);
-        return std::abs(s) < std::numeric_limits<double>::epsilon() ? 1 : std::clamp(w.getX() / s, -1.0, 1.0);
+        return std::abs(s) < std::numeric_limits<double>::epsilon() ? 1 : math::clamp<double>(w.getX() / s, -1.0, 1.0);
     }
 
     double cos2Azimuth(const vec3<double> w) {
