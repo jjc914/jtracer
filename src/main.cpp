@@ -156,21 +156,21 @@ int runRender() {
     }
     
     // TODO: Importance sampling
-    scrn.render(&world1, 16, 3, 64, "world1gt-16spp.ppm");
-    scrn.render(&world1, 8, 3, 32, "world1-8spp.ppm");
-    scrn.render(&world1, 4, 3, 8, "world1-4spp.ppm");
+    //scrn.render(&world1, 16, 3, 64, "world1-16spp.ppm");
+    //scrn.render(&world1, 8, 3, 32, "world1-8spp.ppm");
+    //scrn.render(&world1, 4, 3, 8, "world1-4spp.ppm");
 
-    scrn.render(&world2, 16, 3, 64, "world2-16spp.ppm");
-    scrn.render(&world2, 8, 3, 32, "world2-8spp.ppm");
-    scrn.render(&world2, 4, 3, 8, "world2-4spp.ppm");
+    //scrn.render(&world2, 16, 3, 64, "world2-16spp.ppm");
+    //scrn.render(&world2, 8, 3, 32, "world2-8spp.ppm");
+    //scrn.render(&world2, 4, 3, 8, "world2-4spp.ppm");
 
-    scrn.render(&world3, 16, 3, 64, "world3-16spp.ppm");
-    scrn.render(&world3, 8, 3, 32, "world3-8spp.ppm");
-    scrn.render(&world3, 4, 3, 8, "world3-4spp.ppm");
+    ////scrn.render(&world3, 16, 3, 64, "world3-16spp.ppm");
+    ////scrn.render(&world3, 8, 3, 32, "world3-8spp.ppm");
+    ////scrn.render(&world3, 4, 3, 8, "world3-4spp.ppm");
 
-    scrn.render(&world4, 16, 3, 64, "world4-16spp.ppm");
-    scrn.render(&world4, 8, 3, 32, "world4-8spp.ppm");
-    scrn.render(&world4, 4, 3, 8, "world4-4spp.ppm");
+    //scrn.render(&world4, 16, 3, 64, "world4-16spp.ppm");
+    //scrn.render(&world4, 8, 3, 32, "world4-8spp.ppm");
+    //scrn.render(&world4, 4, 3, 8, "world4-4spp.ppm");
 
     scrn.render(&world5, 16, 3, 64, "world5-16spp.ppm");
     scrn.render(&world5, 8, 3, 32, "world5-8spp.ppm");
