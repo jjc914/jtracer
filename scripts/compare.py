@@ -17,7 +17,8 @@ def main():
     imOne = np.asarray(imageOne).astype(np.int16)
     imTwo = np.asarray(imageTwo).astype(np.int16)
     difference = np.absolute(imTwo - imOne)
-    difference = difference * 5
+    meansquarediff = np.square(imTwo - imOne)
+    print(np.average(meansquarediff))
     differenceImage = Image.fromarray(difference.astype(np.uint8))
     differenceImage.save('/'.join(args.firstImage.split('/')[:-1]) + '/difference.png')
 
